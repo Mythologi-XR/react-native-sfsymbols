@@ -61,4 +61,3 @@ RCT_CUSTOM_VIEW_PROPERTY(weight, NSString, UISFSymbolImageView) {
 }
 
 @end
-  

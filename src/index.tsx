@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-
 import {
   requireNativeComponent,
   processColor,
@@ -8,6 +7,8 @@ import {
   ProcessedColorValue,
   ColorValue,
 } from "react-native";
+
+import { SymbolName } from "./names";
 
 export enum SFSymbolWeight {
   ULTRALIGHT = "ultralight",
@@ -57,7 +58,7 @@ export type SymbolResizeMode =
   | "stretch";
 
 export interface SFSymbolProps {
-  name: string;
+  name: SymbolName;
   color?: ColorValue;
   style?: StyleProp<ViewStyle>;
   size?: number;
@@ -69,7 +70,7 @@ export interface SFSymbolProps {
 
 type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
   iconColor?: ProcessedColorValue | null;
-  systemName: string;
+  systemName: SymbolName;
 };
 
 const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSfsymbols");
