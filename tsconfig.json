@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
-    "target": "ESNext",
+    "target": "ESNext"
   },
   "exclude": ["**/__tests__/*"],
   "include": ["src"]

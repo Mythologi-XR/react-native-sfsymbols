@@ -4489,4 +4489,4 @@ export type SymbolName =
   | "zl.rectangle.roundedtop.fill"
   | "zr.rectangle.roundedtop"
   | "zr.rectangle.roundedtop.fill"
-  | "zzz"
+  | "zzz";

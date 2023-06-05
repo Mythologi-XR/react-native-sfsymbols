@@ -32,6 +32,8 @@ _Don't forget to run `cd ios && pod install && cd ..` after that !_
 
 ## Usage
 
+Note that some symbols require higher minimum iOS targets. `handbag` for instance, requires iOS `16.1`, whereas `lightbulb` has been available since iOS `13.0`.
+
 ```jsx
 import { SFSymbol } from "react-native-sfsymbols";
 

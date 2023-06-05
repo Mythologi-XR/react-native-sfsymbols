@@ -7,7 +7,7 @@ const AnimatedSFSymbol = Animated.createAnimatedComponent(SFSymbol);
 function Row({title, children}: any) {
   return (
     <View style={{marginBottom: 32}}>
-      <View style={{width: '100%', marginBottom: 8, paddingLeft: 16 }}>
+      <View style={{width: '100%', marginBottom: 8, paddingLeft: 16}}>
         <Text style={{fontSize: 19}}>{title}</Text>
       </View>
       <View
@@ -15,8 +15,9 @@ function Row({title, children}: any) {
           flexDirection: 'row',
           justifyContent: 'center',
           backgroundColor: '#eee',
-          paddingVertical: 16
-        }}>
+          paddingVertical: 16,
+        }}
+      >
         {children}
       </View>
     </View>
@@ -40,9 +41,16 @@ export function App() {
   const color = React.useRef(new Animated.Value(0)).current;
 
   React.useEffect(() => {
-    Animated.loop(Animated.spring(rotation, { toValue: 360, useNativeDriver: true })).start();
     Animated.loop(
-      Animated.timing(color, { toValue: 360, useNativeDriver: false, duration: 5000, easing: Easing.linear })
+      Animated.spring(rotation, {toValue: 360, useNativeDriver: true}),
+    ).start();
+    Animated.loop(
+      Animated.timing(color, {
+        toValue: 360,
+        useNativeDriver: false,
+        duration: 5000,
+        easing: Easing.linear,
+      }),
     ).start();
   }, []);
 
@@ -51,8 +59,18 @@ export function App() {
       style={{
         marginTop: 64,
         flex: 1,
-      }}>
-      <Text style={{ paddingLeft: 16, fontSize: 32, fontWeight: '300', marginBottom: 48 }}>React Native SFSymbols</Text>
+      }}
+    >
+      <Text
+        style={{
+          paddingLeft: 16,
+          fontSize: 32,
+          fontWeight: '300',
+          marginBottom: 48,
+        }}
+      >
+        React Native SFSymbols
+      </Text>
       <Row title="Weights">
         {weights.map(weight => (
           <SFSymbol
@@ -121,9 +139,14 @@ export function App() {
           style={{
             width: 64,
             height: 64,
-            transform: [{
-              rotateZ: rotation.interpolate({ inputRange: [0, 360], outputRange: ['0deg', '360deg' ]})
-            }]
+            transform: [
+              {
+                rotateZ: rotation.interpolate({
+                  inputRange: [0, 360],
+                  outputRange: ['0deg', '360deg'],
+                }),
+              },
+            ],
           }}
         />
         <AnimatedSFSymbol
@@ -131,7 +154,15 @@ export function App() {
           size={32}
           color={color.interpolate({
             inputRange: [0, 60, 120, 180, 240, 300, 360],
-            outputRange: ['rgb(255,0,0)', 'rgb(255,255,0)', 'rgb(0,255,0)', 'rgb(0,255,255)', 'rgb(0,0,255)', 'rgb(255,0,255)', 'rgb(255,0,0)'],
+            outputRange: [
+              'rgb(255,0,0)',
+              'rgb(255,255,0)',
+              'rgb(0,255,0)',
+              'rgb(0,255,255)',
+              'rgb(0,0,255)',
+              'rgb(255,0,255)',
+              'rgb(255,0,0)',
+            ],
           })}
           style={{
             width: 64,
