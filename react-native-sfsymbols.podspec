@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.authors = package["author"]
   s.homepage = package["homepage"]
 
-  s.platforms = { :ios => "10.0", :tvos => "10.0" }
+  s.platforms = { :ios => "13.0", :tvos => "10.0" }
 
   s.source = { :git => package["repository"]["url"], :tag => "v#{s.version}" }
   s.source_files = "ios/*.{h,m}"
