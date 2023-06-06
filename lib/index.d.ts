@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { StyleProp, ViewStyle, ColorValue } from "react-native";
-import { SymbolName } from "./names";
+import type { SymbolName } from "./names";
+import type { SafeSymbolName } from "./safeNames";
 export declare enum SFSymbolWeight {
   ULTRALIGHT = "ultralight",
   LIGHT = "light",
@@ -52,7 +53,8 @@ export interface SFSymbolProps {
   weight?: SymbolWeight;
   scale?: SymbolScale;
   multicolor?: boolean;
+  fallback?: SafeSymbolName;
 }
 export declare class SFSymbol extends PureComponent<SFSymbolProps> {
-  render(): React.JSX.Element;
+  render(): React.JSX.Element | null;
 }
